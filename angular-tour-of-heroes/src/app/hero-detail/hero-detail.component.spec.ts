@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HeroDetailComponent } from './hero-detail.component';
 
 describe('HeroDetailComponent', () => {
@@ -8,7 +8,10 @@ describe('HeroDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroDetailComponent ]
+      declarations: [ HeroDetailComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
@@ -19,7 +22,7 @@ describe('HeroDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });

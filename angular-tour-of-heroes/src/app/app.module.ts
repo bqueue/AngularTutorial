@@ -19,6 +19,12 @@ import { MessagesComponent } from './messages/messages.component';
     BrowserModule,
     FormsModule
   ],
+  exports: [
+    AppComponent,
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
