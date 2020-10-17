@@ -1,11 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { HeroServiceMock } from 'mocks/mocks';
-
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
-import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MockComponent } from 'ng-mocks';
+import { HeroServiceMock } from '../../mocks/mocks';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -13,15 +11,15 @@ describe('HeroesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroesComponent ],
+      declarations: [
+        HeroesComponent,
+        MockComponent(HeroDetailComponent)
+      ],
       providers: [
         {
           provide: HeroService, 
           useValue: HeroServiceMock.instance()
         }
-      ],
-      schemas: [
-        NO_ERRORS_SCHEMA
       ]
     })
     .compileComponents();
