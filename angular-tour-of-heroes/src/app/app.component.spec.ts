@@ -1,15 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MockComponent } from 'ng-mocks';
+import { HeroesComponent } from './heroes/heroes.component';
+import { MessagesComponent } from './messages/messages.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
-      ],
-      schemas: [
-        NO_ERRORS_SCHEMA
+        AppComponent,
+        MockComponent(HeroesComponent),
+        MockComponent(MessagesComponent)
       ]
     }).compileComponents();
   }));
