@@ -4,6 +4,7 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
 import { MockComponent } from 'ng-mocks';
 import { HeroServiceMock } from '../../mocks/mocks';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -20,6 +21,9 @@ describe('HeroesComponent', () => {
           provide: HeroService, 
           useValue: HeroServiceMock.instance()
         }
+      ],
+      imports: [
+        RouterTestingModule
       ]
     })
     .compileComponents();
