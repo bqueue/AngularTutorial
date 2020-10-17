@@ -1,17 +1,17 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MockComponent } from 'ng-mocks';
-import { HeroesComponent } from './heroes/heroes.component';
 import { MessagesComponent } from './messages/messages.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        MockComponent(HeroesComponent),
         MockComponent(MessagesComponent)
-      ]
+      ],
+      imports: [RouterTestingModule]
     }).compileComponents();
   }));
 
