@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { HeroServiceMock } from '../../mocks/mocks';
+import { HeroService } from '../hero.service';
 import { HeroSearchComponent } from './hero-search.component';
 
 describe('HeroSearchComponent', () => {
@@ -8,7 +10,14 @@ describe('HeroSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroSearchComponent ]
+      declarations: [ HeroSearchComponent ],
+      providers: [
+        {
+          provide: HeroService, 
+          useValue: HeroServiceMock.instance()
+        }
+      ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));
